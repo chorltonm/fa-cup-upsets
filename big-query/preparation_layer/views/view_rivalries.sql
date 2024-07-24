@@ -9,7 +9,7 @@ team1_id,
 team2_id,
 1 AS rivalry_flag
 
-FROM `birkbeck-msc-project-422917.extract_layer.web_scrape_wikipedia_rivalries` 
+FROM extract_layer.web_scrape_wikipedia_rivalries
 
 WHERE team1_id <> -1 OR team2_id <> -1
 

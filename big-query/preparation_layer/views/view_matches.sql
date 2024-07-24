@@ -85,22 +85,22 @@ SELECT
   IFNULL(match_away_team_score_penalties,0) AS match_away_team_score_penalties,
   IFNULL(match_away_team_score_period_1,0) AS match_away_team_score_first_half,
   IFNULL(match_away_team_score_period_2,0) AS match_away_team_score_second_half
-
-FROM transform_layer.matches mtc
+-- SELECT *
+FROM preparation_layer.matches mtc
 
 -- Get League Level from leagues
-LEFT JOIN `transform_layer.view_leagues` vlges ON mtc.match_league_id = vlges.league_id
+LEFT JOIN preparation_layer.view_leagues vlges ON mtc.match_league_id = vlges.league_id
 
 -- Get Season year from seasons
-LEFT JOIN `transform_layer.seasons` sea ON mtc.match_season_id = sea.season_id
+LEFT JOIN preparation_layer.seasons sea ON mtc.match_season_id = sea.season_id
 
 -- Get areana id from Teams
-LEFT JOIN transform_layer.teams tms ON mtc.match_home_team_id = tms.team_id
+LEFT JOIN preparation_layer.teams tms ON mtc.match_home_team_id = tms.team_id
 
 -- Get lat & long from areana for the home team
-LEFT JOIN transform_layer.arenas arnt ON tms.team_arena_id = arnt.arena_id 
+LEFT JOIN preparation_layer.arenas arnt ON tms.team_arena_id = arnt.arena_id 
 
 -- Get lat & long from areana for the match
-LEFT JOIN transform_layer.arenas arnm ON mtc.match_arena_id = arnm.arena_id 
+LEFT JOIN preparation_layer.arenas arnm ON mtc.match_arena_id = arnm.arena_id 
 
 ORDER BY mtc.match_league_name, mtc.match_start_time

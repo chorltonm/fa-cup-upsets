@@ -25,7 +25,7 @@ lineup_player_name,
 lineup_position,
 cumulative_total_apperances
 
-FROM transform_layer.view_season_team_player_apperances facup
+FROM preparation_layer.view_season_team_player_apperances facup
 
 WHERE facup.match_league_name = 'FA Cup' AND facup.match_round_name = 'Round 3' 
 
@@ -42,7 +42,7 @@ SELECT
   vmtc.match_round_name,
   MIN(vmtc.match_date) AS earliest_round_3_date
 
-FROM `birkbeck-msc-project-422917.transform_layer.view_matches` vmtc
+FROM preparation_layer.view_matches vmtc
 
 WHERE 
 
@@ -71,7 +71,7 @@ MAX(vlr.match_day) AS last_league_game_before_round_3,
 MAX(vlr.played) AS games_played_before_round_3
 
 
-FROM `analysis_layer.view_league_ranking_sorted` vlr
+FROM `preparation_layer.view_league_ranking_sorted` vlr
 
 LEFT JOIN round_3_dates rd ON vlr.season_year = rd.season_year
 
@@ -105,7 +105,7 @@ cumulative_total_apperances,
 games_played_before_round_3
 
 
-FROM transform_layer.view_season_team_player_apperances lgeapps
+FROM preparation_layer.view_season_team_player_apperances lgeapps
 
 INNER JOIN round_3_league rnd ON lgeapps.match_season_year = rnd.season_year AND lgeapps.match_team_id = rnd.team_id AND lgeapps.match_date = rnd.last_league_game_before_round_3
 

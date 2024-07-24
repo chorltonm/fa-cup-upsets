@@ -30,9 +30,9 @@ apperance_count,
 SUM(apperance_count) OVER (PARTITION BY match_season_id, match_home_team_name, lineup_player_id ORDER BY match_season_id, match_date) AS cumulative_home_away_apperances,
 
 -- SELECT *
-FROM birkbeck-msc-project-422917.preparation_layer.view_matches vmtc
+FROM preparation_layer.view_matches vmtc
 
-LEFT JOIN birkbeck-msc-project-422917.preparation_layer.lineups lnps ON vmtc.match_lineups_id = lnps.lineup_id AND lineup_home_away_flag = 'home'
+LEFT JOIN preparation_layer.lineups lnps ON vmtc.match_lineups_id = lnps.lineup_id AND lineup_home_away_flag = 'home'
 
 WHERE match_status_reason  IN ('Ended','AET','AP') AND lineup_players_availability_reason = 'selected' --AND lineup_player_id = 19472
 
@@ -65,9 +65,9 @@ apperance_count,
 SUM(apperance_count) OVER (PARTITION BY match_season_id, match_away_team_name, lineup_player_id ORDER BY match_season_id, match_date) AS cumulative_home_away_apperances,
 
 -- SELECT *
-FROM birkbeck-msc-project-422917.preparation_layer.view_matches vmtc
+FROM preparation_layer.view_matches vmtc
 
-LEFT JOIN birkbeck-msc-project-422917.preparation_layer.lineups lnps ON vmtc.match_lineups_id = lnps.lineup_id AND lineup_home_away_flag = 'away'
+LEFT JOIN preparation_layer.lineups lnps ON vmtc.match_lineups_id = lnps.lineup_id AND lineup_home_away_flag = 'away'
 
 WHERE match_status_reason  IN ('Ended','AET','AP')  AND lineup_players_availability_reason = 'selected' --AND lineup_player_id = 19472
 

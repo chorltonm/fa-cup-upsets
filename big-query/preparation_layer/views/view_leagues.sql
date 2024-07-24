@@ -16,7 +16,7 @@ IFNULL(lges.league_lower_leagues_league_name,'n/a')  AS league_lower_leagues_lea
 IFNULL(llges.league_lower_leagues_league_id,0)  AS league_lower_leagues_league_id_2,
 IFNULL(llges.league_lower_leagues_league_name,'n/a')  AS league_lower_leagues_league_name_2,
 
- FROM `birkbeck-msc-project-422917.transform_layer.leagues` lges
+ FROM preparation_layer.leagues lges
 
 LEFT JOIN 
 
@@ -28,7 +28,7 @@ league_name,
 league_lower_leagues_league_id,
 league_lower_leagues_league_name
 
-FROM `birkbeck-msc-project-422917.transform_layer.leagues`  WHERE league_lower_leagues_league_name = 'National League South'
+FROM preparation_layer.leagues  WHERE league_lower_leagues_league_name = 'National League South'
 
 ) llges ON lges.league_id = llges.league_id
 

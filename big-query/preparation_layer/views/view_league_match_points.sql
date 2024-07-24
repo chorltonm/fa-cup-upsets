@@ -32,7 +32,7 @@ SUM(CAST(match_home_team_points AS INT64)) OVER (PARTITION BY match_season_id, m
 0 AS form_match_points_last_5_away_games,
 
 
-FROM transform_layer.view_matches vmtc
+FROM preparation_layer.view_matches vmtc
 
 WHERE vmtc.match_league_name <> 'FA Cup' AND match_status_reason  IN ('Ended') 
 
@@ -67,7 +67,7 @@ match_away_teams_goal_diff AS match_teams_goal_diff,
 SUM(CAST(match_away_team_points AS INT64)) OVER (PARTITION BY match_season_id, match_away_team_id ORDER BY match_season_id, match_date ROWS BETWEEN 4 PRECEDING AND CURRENT ROW) AS form_match_points_last_5_away_games
 
 
-FROM transform_layer.view_matches vmtc
+FROM preparation_layer.view_matches vmtc
 
 WHERE vmtc.match_league_name <> 'FA Cup' AND match_status_reason  IN ('Ended') 
 
