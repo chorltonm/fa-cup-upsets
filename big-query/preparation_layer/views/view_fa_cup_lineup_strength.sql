@@ -1,4 +1,5 @@
 CREATE OR REPLACE VIEW `birkbeck-msc-project-422917.preparation_layer.view_fa_cup_lineup_strength` AS
+
 WITH fa_cup_3rd_round_lineups
 
 AS

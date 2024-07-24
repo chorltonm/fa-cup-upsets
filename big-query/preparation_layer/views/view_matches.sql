@@ -1,4 +1,5 @@
 CREATE OR REPLACE VIEW `birkbeck-msc-project-422917.preparation_layer.view_matches` AS
+
 SELECT
 
   season_year,

@@ -1,4 +1,5 @@
 CREATE OR REPLACE VIEW `birkbeck-msc-project-422917.preparation_layer.view_fa_cup_round_3_features` AS
+
 SELECT 
 
 #fa_cup_mtchs.match_id,
@@ -74,3 +75,4 @@ LEFT JOIN analysis_layer.ratings_model_ranks rr_away ON fa_cup_mtchs.away_team_r
 WHERE home_team_league_level <> away_team_league_level
 
 ORDER BY home_team_round_3_position ASC
+

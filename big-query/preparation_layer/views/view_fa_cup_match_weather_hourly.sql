@@ -1,4 +1,6 @@
 CREATE OR REPLACE VIEW `birkbeck-msc-project-422917.preparation_layer.view_fa_cup_match_weather_hourly` AS
+
+
 SELECT 
 
 

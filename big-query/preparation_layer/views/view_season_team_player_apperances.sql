@@ -1,4 +1,5 @@
 CREATE OR REPLACE VIEW `birkbeck-msc-project-422917.preparation_layer.view_season_team_player_apperances` AS
+
 WITH player_appreances_home_away AS
 
 (

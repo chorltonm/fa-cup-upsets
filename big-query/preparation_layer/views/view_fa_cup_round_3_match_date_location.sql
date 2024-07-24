@@ -1,4 +1,5 @@
 CREATE OR REPLACE VIEW `birkbeck-msc-project-422917.preparation_layer.view_fa_cup_round_3_match_date_location` AS
+
 SELECT 
 
   match_id,

@@ -1,6 +1,4 @@
-CREATE VIEW analysis_layer.view_consolidated_confusion_matrix_results 
-
-AS
+CREATE OR REPLACE VIEW `birkbeck-msc-project-422917.analysis_layer.view_consolidated_confusion_matrix_results` AS
 
 SELECT  
 

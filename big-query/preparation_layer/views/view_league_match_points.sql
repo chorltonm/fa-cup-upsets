@@ -1,4 +1,5 @@
 CREATE OR REPLACE VIEW `birkbeck-msc-project-422917.preparation_layer.view_league_match_points` AS
+
 WITH home_away_matches AS
 
 (

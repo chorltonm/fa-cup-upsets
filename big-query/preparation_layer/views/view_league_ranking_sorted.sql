@@ -1,4 +1,5 @@
-CREATE OR REPLACE VIEW `birkbeck-msc-project-422917.preparation_layer.view_league_ranking_sorted` AS
+CREATE OR REPLACE VIEW `birkbeck-msc-project-422917.analysis_layer.view_league_ranking_sorted` AS
+
 WITH league_teams AS 
 
 (
@@ -10,7 +11,7 @@ league_id,
 team_id,
 1 AS team_count
 
-FROM preparation_layer.league_ranking
+FROM analysis_layer.league_ranking
 
 ORDER BY season_year, league_id, team_id ASC
 
@@ -46,8 +47,6 @@ lr.season_id,
 lr.season_name, 
 lr.match_day, 
 lr.match_round, 
-lr.match_flag,
-lr.match_team_points,
 lr.position, 
 lr.team_id, 
 lr.team_name, 
@@ -68,10 +67,12 @@ WHEN position BETWEEN 1 AND 6 THEN 0 ELSE 1 END AS promotion_relegation
 
 
 
-FROM preparation_layer.league_ranking lr
+FROM analysis_layer.league_ranking lr
 
 LEFT JOIN number_teams nt ON lr.season_year = nt.season_year AND  lr.league_id = nt.league_id
 
 --WHERE league_id = 166
 
 ORDER BY lr.season_year ASC, played ASC, league_level DESC, position ASC
+
+
