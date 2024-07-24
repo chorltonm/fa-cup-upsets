@@ -1,0 +1,45 @@
+CREATE OR REPLACE VIEW `birkbeck-msc-project-422917.preparation_layer.view_fa_cup_match_weather_hourly` AS
+SELECT 
+
+
+fa_cup_mtches.match_id,
+fa_cup_mtches.match_date,
+fa_cup_mtches.match_1st_half_kick_off,
+fa_cup_wthr_1.weather_data_days_datetime AS match_1st_half_weather_data_days_datetime,
+fa_cup_wthr_1.weather_data_hours_feelslike AS match_1st_half_weather_data_hours_feelslike,
+fa_cup_wthr_1.weather_data_hours_humidity AS match_1st_half_weather_data_hours_humidity ,
+fa_cup_wthr_1.weather_data_hours_dew AS match_1st_half_weather_data_hours_dew,
+fa_cup_wthr_1.weather_data_hours_precip AS match_1st_half_weather_data_hours_precip,
+fa_cup_wthr_1.weather_data_hours_snow AS match_1st_half_weather_data_hours_snow,
+fa_cup_wthr_1.weather_data_hours_snowdepth AS match_1st_half_weather_data_hours_snowdepth,
+fa_cup_wthr_1.weather_data_hours_windspeed AS match_1st_half_weather_data_hours_windspeed ,
+fa_cup_wthr_1.weather_data_hours_pressure AS match_1st_half_weather_data_hours_pressure ,
+fa_cup_wthr_1.weather_data_hours_visibility AS match_1st_half_weather_data_hours_visibility ,
+fa_cup_wthr_1.weather_data_hours_cloudcover AS match_1st_half_weather_data_hours_cloudcover ,
+fa_cup_wthr_1.weather_data_hours_conditions AS match_1st_half_weather_data_hours_conditions,
+fa_cup_mtches.match_2nd_half_kick_off,
+fa_cup_wthr_2.weather_data_days_datetime AS match_2nd_half_weather_data_days_datetime,
+fa_cup_wthr_2.weather_data_hours_feelslike AS match_2nd_half_weather_data_hours_feelslike,
+fa_cup_wthr_2.weather_data_hours_humidity AS match_2nd_half_weather_data_hours_humidity ,
+fa_cup_wthr_2.weather_data_hours_dew AS match_2nd_half_weather_data_hours_dew,
+fa_cup_wthr_2.weather_data_hours_precip AS match_2nd_half_weather_data_hours_precip,
+fa_cup_wthr_2.weather_data_hours_snow AS match_2nd_half_weather_data_hours_snow,
+fa_cup_wthr_2.weather_data_hours_snowdepth AS match_2nd_half_weather_data_hours_snowdepth,
+fa_cup_wthr_2.weather_data_hours_windspeed AS match_2nd_half_weather_data_hours_windspeed ,
+fa_cup_wthr_2.weather_data_hours_pressure AS match_2nd_half_weather_data_hours_pressure ,
+fa_cup_wthr_2.weather_data_hours_visibility AS match_2nd_half_weather_data_hours_visibility ,
+fa_cup_wthr_2.weather_data_hours_cloudcover AS match_2nd_half_weather_data_hours_cloudcover ,
+fa_cup_wthr_2.weather_data_hours_conditions AS match_2nd_half_weather_data_hours_conditions,
+
+FROM `birkbeck-msc-project-422917.preparation_layer.view_round_3_fa_cup_matches` fa_cup_mtches
+
+
+-- 1st Half Weather
+LEFT JOIN preparation_layer.weather fa_cup_wthr_1
+      ON fa_cup_mtches.match_id = fa_cup_wthr_1.match_id AND LEFT(fa_cup_mtches.match_1st_half_kick_off,2) = LEFT(CAST(fa_cup_wthr_1.weather_data_hours_datetime AS STRING),2)
+
+-- 2nd Half Weather
+LEFT JOIN preparation_layer.weather fa_cup_wthr_2
+      ON fa_cup_mtches.match_id = fa_cup_wthr_2.match_id AND LEFT(fa_cup_mtches.match_2nd_half_kick_off,2) = LEFT(CAST(fa_cup_wthr_2.weather_data_hours_datetime AS STRING),2)
+
+ORDER BY fa_cup_mtches.match_id, fa_cup_wthr_1.weather_data_hours_datetime ASC

@@ -1,3 +1,5 @@
+CREATE OR REPLACE PROCEDURE `birkbeck-msc-project-422917.preparation_layer.sproc_update_arenas` ()
+
 BEGIN
 
 TRUNCATE TABLE preparation_layer.arenas;
