@@ -7,7 +7,7 @@ SELECT
   match_latitude,
   match_longitude
 
-FROM transform_layer.view_matches vmtc
+FROM preparation_layer.view_matches vmtc
 
 WHERE 
 
