@@ -78,7 +78,7 @@ vmtc.match_league_name = 'FA Cup' AND vmtc.match_round_name = 'Round 3'AND vmtc.
 
 AND vmtc.match_home_team_score_end <> vmtc.match_away_team_score_end
 
-AND vmtc.season_year NOT IN ('21/22','22/23')
+--AND vmtc.season_year NOT IN ('21/22','22/23')
 
 
 ORDER BY season_year ASC
