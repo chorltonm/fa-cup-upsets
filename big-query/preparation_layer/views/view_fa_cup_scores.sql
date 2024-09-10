@@ -2,6 +2,7 @@ CREATE OR REPLACE VIEW `birkbeck-msc-project-422917.preparation_layer.view_fa_cu
 
 SELECT 
 
+season_year,
 match_id,
 match_date,
 home_team_round_3_position AS home_team_no,

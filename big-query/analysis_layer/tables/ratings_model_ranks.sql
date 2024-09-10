@@ -1,4 +1,4 @@
-CREATE OR REPLACE TABLE `birkbeck-msc-project-422917.analysis_layer.ratings_model_ranks` 
+CREATE OR REPLACE TABLE `birkbeck-msc-project-422917.analysis_layer.ratings_model_ranks`
 
 (
 `team_no` INT64,

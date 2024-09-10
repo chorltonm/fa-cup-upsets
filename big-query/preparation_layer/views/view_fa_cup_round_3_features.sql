@@ -2,7 +2,10 @@ CREATE OR REPLACE VIEW `birkbeck-msc-project-422917.preparation_layer.view_fa_cu
 
 SELECT 
 
-#fa_cup_mtchs.match_id,
+season_year,
+fa_cup_mtchs.match_id,
+fa_cup_mtchs.match_name,
+fa_cup_mtchs.match_final_score,
 arena_stadium_capacity,
 home_team_league_level,
 CASE 

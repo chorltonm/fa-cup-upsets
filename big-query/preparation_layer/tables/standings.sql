@@ -1,5 +1,7 @@
-CREATE OR REPLACE TABLE `birkbeck-msc-project-422917.preparation_layer.standings` (
-    `standings_id` INT64,
+CREATE OR REPLACE TABLE `birkbeck-msc-project-422917.preparation_layer.standings`
+
+(
+`standings_id` INT64,
     `standings_name` STRING,
     `standings_league_id` INT64,
     `standings_league_name` STRING,

@@ -1,5 +1,7 @@
-CREATE OR REPLACE TABLE `birkbeck-msc-project-422917.preparation_layer.weather` (
-    `match_id` INT64,
+CREATE OR REPLACE TABLE `birkbeck-msc-project-422917.preparation_layer.weather`
+
+(
+`match_id` INT64,
     `weather_data_days_datetime` DATE,
     `weather_data_latitude` FLOAT64,
     `weather_data_longitude` FLOAT64,

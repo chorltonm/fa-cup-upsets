@@ -1,4 +1,4 @@
-CREATE OR REPLACE TABLE `birkbeck-msc-project-422917.extract_layer.all_api_sportdevs_fb_leagues` 
+CREATE OR REPLACE TABLE `birkbeck-msc-project-422917.extract_layer.all_api_sportdevs_fb_leagues`
 
 (
 `current_champion_team_num_titles` INT64,

@@ -1,0 +1,30 @@
+CREATE OR REPLACE TABLE `birkbeck-msc-project-422917.preparation_layer.arenas`
+
+(
+`arena_id` INT64,
+    `arena_name` STRING,
+    `arena_operator` STRING,
+    `arena_owner` STRING,
+    `arena_city` STRING,
+    `arena_country_name` STRING,
+    `arena_country_id` INT64,
+    `arena_stadium_capacity` INT64,
+    `arena_geolocation_latitude` FLOAT64,
+    `arena_geolocation_longitude` FLOAT64,
+    `arena_geolocation_country_code` STRING,
+    `arena_geolocation_confidence` INT64,
+    `arena_geolocation_locality` STRING,
+    `arena_geolocation_region` STRING,
+    `arena_geolocation_county` STRING,
+    `arena_geolocation_region_code` STRING,
+    `arena_geolocation_administrative_area` STRING,
+    `arena_geolocation_name` STRING,
+    `arena_geolocation_label` STRING,
+    `arena_geolocation_continent` STRING,
+    `arena_built` STRING,
+    `arena_geolocation_type` STRING,
+    `arena_cost` STRING,
+    `arena_surface` STRING,
+    `arena_dimensions` STRING,
+    `arena_opened` STRING
+)

@@ -1,4 +1,4 @@
-CREATE OR REPLACE TABLE `birkbeck-msc-project-422917.extract_layer.web_scrape_wikipedia_rivalries` 
+CREATE OR REPLACE TABLE `birkbeck-msc-project-422917.extract_layer.web_scrape_wikipedia_rivalries`
 
 (
 `rivalry_name` STRING,

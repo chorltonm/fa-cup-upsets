@@ -1,5 +1,7 @@
-CREATE OR REPLACE TABLE `birkbeck-msc-project-422917.preparation_layer.lineups` (
-    `lineup_id` INT64,
+CREATE OR REPLACE TABLE `birkbeck-msc-project-422917.preparation_layer.lineups`
+
+(
+`lineup_id` INT64,
     `lineup_home_away_flag` STRING,
     `lineup_confirmed` BOOLEAN,
     `lineup_formation` STRING,

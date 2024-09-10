@@ -1,4 +1,4 @@
-CREATE OR REPLACE TABLE `birkbeck-msc-project-422917.analysis_layer.ratings_predictions` 
+CREATE OR REPLACE TABLE `birkbeck-msc-project-422917.analysis_layer.ratings_predictions`
 
 (
 `ratings_model` STRING,
@@ -14,5 +14,7 @@ CREATE OR REPLACE TABLE `birkbeck-msc-project-422917.analysis_layer.ratings_pred
     `actual_winner` INT64,
     `actual_upset` INT64,
     `predicted_upset` INT64,
-    `upset_probability` FLOAT64
+    `upset_probability` FLOAT64,
+    `home_team_rank` INT64,
+    `away_team_rank` INT64
 )

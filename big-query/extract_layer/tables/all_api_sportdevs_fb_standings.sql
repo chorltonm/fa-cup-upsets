@@ -1,4 +1,4 @@
-CREATE OR REPLACE TABLE `birkbeck-msc-project-422917.extract_layer.all_api_sportdevs_fb_standings` 
+CREATE OR REPLACE TABLE `birkbeck-msc-project-422917.extract_layer.all_api_sportdevs_fb_standings`
 
 (
 `tournament_name` STRING,
